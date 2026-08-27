@@ -12,5 +12,13 @@ export const products = [
 ].map(([slug,name,price,description,category,badge,benefits],i)=>({
   id:i+1,slug,name,price,description,category,badge,benefits,
   image:`assets/products/${slug}/hero.svg`, detail:`assets/products/${slug}/detail.svg`,
+  // Add any number of relative or remote image URLs here; the gallery adapts to one image too.
+  images:[`assets/products/${slug}/hero.svg`,`assets/products/${slug}/detail.svg`],
+  // Supported types: mp4 (inline player), youtube, tiktok and instagram (official page/embed).
+  videos:[],
+  variants:i===1?["S / Sand","M / Sage","L / Charcoal"]:i===5?["Natural","Sage"]:[],
+  specifications:{Material:i===4?'Food-grade silicone':'Pet-safe mixed materials',Care:'Wipe clean; see included care guide',Dispatch:'1–2 business days'},
+  howTo:['Introduce the product calmly and let your pet investigate.','Use under supervision and follow the included instructions.','Clean after use and store in a dry place.'],
+  faq:[['Is it suitable for every pet?','Check the size and specifications above, and always supervise first use.'],['How quickly will it ship?','Orders usually leave our studio in 1–2 business days.'],['Can I return it?','Yes. Unused items can be returned within 30 days.']],
   rating:[4.9,4.8,4.7,4.9,4.8,4.7,4.8,4.9][i], reviews:[184,96,121,208,88,74,61,147][i]
 }));
