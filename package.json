@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "check": "node tests/check.mjs",
+    "serve": "python3 -m http.server 4173"
+  },
+  "private": true,
+  "type": "module"
+}
