@@ -1,5 +1,6 @@
 import fs from 'node:fs'; import {products} from '../data/products.js';
-if(products.length!==8) throw Error('Expected exactly 8 products');
+if(products.length!==2) throw Error('Expected exactly 2 products');
+if(products.some(p=>p.price!==null)) throw Error('Unverified prices must not be published');
 for(const p of products){
   if(!p.slug || !Array.isArray(p.images) || !p.images.length || !Array.isArray(p.videos)) throw Error(`Incomplete product media architecture: ${p.name}`);
   for(const f of [p.image,p.detail,...p.images]) if(!/^https?:/.test(f)&&!fs.existsSync(f)) throw Error(`Missing ${f}`);
